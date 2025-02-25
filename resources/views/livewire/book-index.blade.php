@@ -1,6 +1,13 @@
 <div>
-    <div class="flex my-3 justify-end">
-        <button class="btn btn-sm text-xs text-white btn-primary" wire:click="createBook">Create Book</button>
+    <div class="my-3">
+        <form wire:submit.prevent="createBook">
+            <div class="flex flex-col gap-y-2">
+                <input type="text" placeholder="Title"
+                    class="input input-bordered w-full max-w-md bg-gray-300 text-black placeholder:text-black"
+                    id="title" wire:model="title" />
+                <button class="btn btn-primary btn-sm text-sm text-white w-fit" type="submit">Submit</button>
+            </div>
+        </form>
     </div>
     <div class="flex flex-col gap-2">
 

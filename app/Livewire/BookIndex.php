@@ -7,10 +7,10 @@ use Livewire\Component;
 
 class BookIndex extends Component {
 	use \App\Traits\Pr;
+
+	public string $title = '';
 	public function createBook() {
-		Book::factory()->create( [ 
-			'user_id' => 1,
-		] );
+		dd( $this->title );
 	}
 	public function render() {
 		return view( 'livewire.book-index', [ 
