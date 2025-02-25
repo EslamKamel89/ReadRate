@@ -1,0 +1,14 @@
+{
+    "components": [
+        {
+            "snapshot": "{\"data\":{\"counter\":1},\"memo\":{\"id\":\"3XKp50p8QPfQsfsjLWv5\",\"name\":\"wisdom\",\"path\":\"dashboard\",\"method\":\"GET\",\"children\":[],\"scripts\":[],\"assets\":[],\"errors\":[],\"locale\":\"en\"},\"checksum\":\"15e7826e319881330389d3dde9e002f07440b3903f47816f2482b98606d89c5f\"}",
+            "effects": {
+                "returns": [
+                    null
+                ],
+                "html": "<div wire:id=\"3XKp50p8QPfQsfsjLWv5\">\n    <h2>Close your eyes. Count to one. That is how long forever feels.<\/h2>\n    <div class=\"flex gap-2 items-center\">\n        <button class=\"btn btn-success text-white text-2xl font-bold\" wire:click=\"increment\">+<\/button>\n        <div class=\"text-6xl font-bold\">1<\/div>\n        <button class=\"btn btn-warning text-white text-2xl font-bold\" wire:click=\"decrement\">-<\/button>\n    <\/div>\n<\/div>"
+            }
+        }
+    ],
+    "assets": []
+}
