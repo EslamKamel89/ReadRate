@@ -2,25 +2,21 @@
 
 namespace App\Livewire;
 
+use App\Livewire\Forms\BookForm;
 use App\Models\Book;
 use Livewire\Component;
 
 class BookIndex extends Component {
 	use \App\Traits\Pr;
+	public BookForm $form;
 
-	public string $title = '';
-	public string $author = '';
-	public function createBook() {
-		auth()->user()->books()->create( [ 
-			'title' => $this->title,
-			'author' => $this->author,
-		] );
-		$this->title = '';
-		$this->author = '';
-	}
 	public function render() {
 		return view( 'livewire.book-index', [ 
 			'books' => auth()->user()->books()->latest()->get(),
 		] );
+	}
+
+	public function submit() {
+		$this->form->create();
 	}
 }
