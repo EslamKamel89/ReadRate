@@ -9,8 +9,14 @@ class BookIndex extends Component {
 	use \App\Traits\Pr;
 
 	public string $title = '';
+	public string $author = '';
 	public function createBook() {
-		dd( $this->title );
+		auth()->user()->books()->create( [ 
+			'title' => $this->title,
+			'author' => $this->author,
+		] );
+		$this->title = '';
+		$this->author = '';
 	}
 	public function render() {
 		return view( 'livewire.book-index', [ 

@@ -5,6 +5,9 @@
                 <input type="text" placeholder="Title"
                     class="input input-bordered w-full max-w-md bg-gray-300 text-black placeholder:text-black"
                     id="title" wire:model="title" />
+                <input type="text" placeholder="Author"
+                    class="input input-bordered w-full max-w-md bg-gray-300 text-black placeholder:text-black"
+                    id="author" wire:model="author" />
                 <button class="btn btn-primary btn-sm text-sm text-white w-fit" type="submit">Submit</button>
             </div>
         </form>
