@@ -1,5 +1,4 @@
 <div>
-
     <div class="my-3">
         <form wire:submit.prevent="submit">
             <div class="flex flex-col gap-y-2">
@@ -25,11 +24,5 @@
             </div>
         </form>
 
-    </div>
-    <div class="flex flex-col gap-2">
-
-        @foreach ( $books as $book )
-			<livewire:book-item :book="$book" wire:key="{{ $book->id }}" />
-		@endforeach
     </div>
 </div>

@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Forms;
 
+use App\Models\Book;
 use Livewire\Attributes\Validate;
 use Livewire\Form;
 
@@ -14,13 +15,14 @@ class BookForm extends Form {
 	#[Validate('min:3', message: 'The author is too short') ]
 	#[Validate('max:100', message: 'The author is too long') ]
 	public string $author = '';
-	public function create() {
-		auth()->user()->books()->create( [ 
+	public function create(): Book {
+		/** @var \App\Models\Book $book */
+		$book = auth()->user()->books()->create( [ 
 			'title' => $this->title,
 			'author' => $this->author,
 		] );
 		$this->reset();
-
+		return $book;
 	}
 
 }

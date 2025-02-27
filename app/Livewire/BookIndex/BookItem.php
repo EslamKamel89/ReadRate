@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\BookIndex;
 
 use App\Models\Book;
 use Livewire\Component;
@@ -8,6 +8,6 @@ use Livewire\Component;
 class BookItem extends Component {
 	public Book $book;
 	public function render() {
-		return view( 'livewire.book-item' );
+		return view( 'livewire.book-index.book-item' );
 	}
 }

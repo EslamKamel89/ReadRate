@@ -8,7 +8,9 @@ trait Pr {
 	 * @param T $value
 	 * @return T
 	 */
-	public function pr( $value ) {
+	public function pr( $value, ?string $title = null ) {
+		if ( $title )
+			info( "_________ {$title} _________" );
 		info( $value );
 		return $value;
 	}
@@ -18,7 +20,9 @@ trait Pr {
 	 * @param T $value
 	 * @return T
 	 */
-	public function dump( $value ) {
+	public function dump( $value, ?string $title = null ) {
+		if ( $title )
+			dump( "_________ {$title} _________" );
 		dump( $value );
 		return $value;
 	}
