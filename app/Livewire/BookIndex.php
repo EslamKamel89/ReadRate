@@ -20,4 +20,5 @@ class BookIndex extends Component {
 		$this->form->validate();
 		$this->form->create();
 	}
+
 }

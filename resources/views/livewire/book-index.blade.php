@@ -15,9 +15,16 @@
                 @error( 'form.author' )
 					<div class="text-xs text-red-500">{{ $message }}</div>
 				@enderror
-                <button class="btn btn-primary btn-sm text-sm text-white w-fit" type="submit">Submit</button>
+                <div class="flex gap-2 items-center">
+                    <button class="btn btn-primary btn-sm text-sm text-white w-fit disabled:text-gray-800"
+                        type="submit">
+                        <span wire:loading.remove wire:target="submit">Submit</span>
+                        <span wire:loading wire:target="submit">Loading</span>
+                    </button>
+                </div>
             </div>
         </form>
+
     </div>
     <div class="flex flex-col gap-2">
 
