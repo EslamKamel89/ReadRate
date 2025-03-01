@@ -17,7 +17,7 @@ class CreateBook extends Component {
 	public function submit() {
 		$this->form->validate();
 		$book = $this->form->create();
-		dd( $book );
+		// dd( $book );
 		$this->dispatch( 'book-index.update' );
 	}
 }
