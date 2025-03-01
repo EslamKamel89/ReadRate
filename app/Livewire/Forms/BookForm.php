@@ -24,5 +24,12 @@ class BookForm extends Form {
 		$this->reset();
 		return $book;
 	}
+	public function update( Book $book, ) {
+		$book->update( [ 
+			'title' => $this->title,
+			'author' => $this->author,
+		] );
+		return $book;
+	}
 
 }

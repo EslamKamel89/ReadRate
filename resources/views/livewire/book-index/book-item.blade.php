@@ -2,9 +2,7 @@
     <div class="card bg-gray-100 text-black w-full">
         <div class=" card-body">
             @if ( $isEditing )
-				<div>
-					Show Edit form
-				</div>
+				<livewire:book-index.update-book :book="$book" />
 			@endif
             <h2 class="card-title leading-snug">{{ $book->title }}</h2>
             <p class="text-xs  mb-5 leading-snug">by {{ $book->author }}</p>
