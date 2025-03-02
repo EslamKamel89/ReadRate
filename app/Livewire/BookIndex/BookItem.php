@@ -7,8 +7,8 @@ use Livewire\Attributes\On;
 use Livewire\Component;
 
 class BookItem extends Component {
-	protected $listeners = [ 
-		'book-item.update' => '$refresh',
+	protected $listeners = [
+		// 'book-item.{book.id}.update' => '$refresh',
 	];
 	public Book $book;
 	public bool $isEditing = false;
@@ -18,8 +18,8 @@ class BookItem extends Component {
 	public function toggleEdit() {
 		$this->isEditing = ! $this->isEditing;
 	}
-	#[On('book-item.hide-form') ]
-	public function hideForm() {
+	#[On('book-item.{book.id}.update') ]
+	public function updateBookItem() {
 		$this->isEditing = false;
 	}
 

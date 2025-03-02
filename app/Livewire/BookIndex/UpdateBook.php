@@ -19,7 +19,6 @@ class UpdateBook extends Component {
 	public function submit() {
 		$this->form->validate();
 		$this->form->update( $this->book );
-		$this->dispatch( 'book-item.update' );
-		$this->dispatch( 'book-item.hide-form' );
+		$this->dispatch( "book-item.{$this->book->id}.update" );
 	}
 }
