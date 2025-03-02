@@ -11,6 +11,9 @@
                 <button class="btn btn-info text-white !btn-sm !text-xs" wire:click="toggleEdit">
                     <span> {{ $isEditing ? 'Save' : 'Edit' }}</span>
                 </button>
+                <button class="btn btn-error text-white !btn-sm !text-xs">
+                    <span> Delete</span>
+                </button>
             </div>
         </div>
     </div>
