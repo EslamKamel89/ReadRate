@@ -20,6 +20,7 @@ class BookIndex extends Component {
 	}
 	public function deleteBook( $id ) {
 		$book = Book::find( $id );
+		$this->authorize( 'delete', $book );
 		$book->delete();
 	}
 

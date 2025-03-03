@@ -11,8 +11,15 @@
                 <button class="btn btn-info text-white !btn-sm !text-xs" wire:click="toggleEdit">
                     <span> {{ $isEditing ? 'Save' : 'Edit' }}</span>
                 </button>
-                <button class="btn btn-error text-white !btn-sm !text-xs"
+                <!-- <button class="btn btn-error text-white !btn-sm !text-xs"
                     wire:click="$parent.deleteBook({{ $book->id }})">
+                    <span> Delete</span>
+                </button> -->
+                <button x-data @click="
+                if(window.confirm('Are you sure you want to delete this book?')){
+                    $wire.$parent.deleteBook({{ $book->id }});
+                }
+                " class="btn btn-error text-white !btn-sm !text-xs">
                     <span> Delete</span>
                 </button>
             </div>
