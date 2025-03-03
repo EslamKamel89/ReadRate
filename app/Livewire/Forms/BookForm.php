@@ -15,6 +15,8 @@ class BookForm extends Form {
 	#[Validate('min:3', message: 'The author is too short') ]
 	#[Validate('max:100', message: 'The author is too long') ]
 	public string $author = '';
+	#[Validate('nullable') ]
+	public string $notes = '';
 	public function create(): Book {
 		/** @var \App\Models\Book $book */
 		$book = auth()->user()->books()->create( [ 
@@ -31,5 +33,9 @@ class BookForm extends Form {
 		] );
 		return $book;
 	}
-
+	public function updateNotes( Book $book, ) {
+		$book->update( [ 
+			'notes' => $this->notes,
+		] );
+	}
 }
