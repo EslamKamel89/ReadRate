@@ -18,7 +18,10 @@ class BookIndex extends Component {
 			'books' => auth()->user()->books()->latest()->get(),
 		] );
 	}
-
+	public function deleteBook( $id ) {
+		$book = Book::find( $id );
+		$book->delete();
+	}
 
 
 }

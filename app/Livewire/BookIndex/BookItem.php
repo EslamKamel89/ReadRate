@@ -22,5 +22,7 @@ class BookItem extends Component {
 	public function updateBookItem() {
 		$this->isEditing = false;
 	}
-
+	// public function delete() {
+	// 	$this->parent->deleteBook( $this->book->id );
+	// }
 }
