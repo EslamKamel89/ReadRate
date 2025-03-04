@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -28,6 +29,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Book whereTitle($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Book whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Book whereUserId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Book search()
  * @mixin \Eloquent
  */
 class Book extends Model {
@@ -41,5 +43,11 @@ class Book extends Model {
 	];
 	public function user(): BelongsTo {
 		return $this->belongsTo( User::class);
+	}
+	public function scopeSearch( Builder $builder, string $search ) {
+		$builder->when( $search, function (Builder $query, string $search) {
+			$query->where( 'title', 'LIKE', "%{$search}%" )
+				->orWhere( 'author', 'LIKE', "%{$search}%" );
+		} );
 	}
 }

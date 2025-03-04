@@ -1,5 +1,9 @@
 <div>
     <livewire:book-index.create-book />
+    <div>
+        <input wire:model.live.debounce.750="query" type="search"
+            class="rounded-lg px-3 py-2 my-2 border-slate-500 w-full" placeholder="Search books...">
+    </div>
     <div id="books"></div>
     @if ( $books->count() > 0 )
 		<div class="flex flex-col gap-2">
