@@ -15,7 +15,7 @@ class BookIndex extends Component {
 	protected $listeners = [ 
 		'book-index.update' => '$refresh'
 	];
-	#[Url() ]
+	#[Url(as: 'search') ]
 	public string $query = '';
 	public function render() {
 
