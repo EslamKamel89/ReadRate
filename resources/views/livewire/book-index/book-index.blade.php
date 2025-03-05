@@ -1,4 +1,5 @@
 <div>
+    <livewire:toggle-item />
     <livewire:book-index.create-book />
     <div>
         <input wire:model.live.debounce.750="query" type="search"
