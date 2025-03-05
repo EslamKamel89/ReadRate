@@ -16,7 +16,7 @@ class BookForm extends Form {
 	#[Validate('max:100', message: 'The author is too long') ]
 	public string $author = '';
 	#[Validate('nullable') ]
-	public string $notes = '';
+	public ?string $notes = '';
 	public function create(): Book {
 		/** @var \App\Models\Book $book */
 		$book = auth()->user()->books()->create( [ 

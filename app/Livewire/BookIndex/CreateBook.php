@@ -19,5 +19,6 @@ class CreateBook extends Component {
 		$book = $this->form->create();
 		// dd( $book );
 		$this->dispatch( 'book-index.update' );
+		$this->dispatch( 'alert', body: "Book {$book->title} Created Successfully" );
 	}
 }
